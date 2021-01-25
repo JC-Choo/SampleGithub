@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id "kotlin-kapt"
@@ -10,11 +10,10 @@ android {
     buildToolsVersion versions.buildToolsVersion
 
     defaultConfig {
-        applicationId "dev.chu.githubsample"
         minSdkVersion versions.minSdkVersion
         targetSdkVersion versions.targetSdkVersion
-        versionCode versions.appVersionCode
-        versionName versions.appVersionName
+        versionCode versions.libraryVersionCode
+        versionName versions.libraryVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,7 +40,6 @@ android {
 }
 
 dependencies {
-    implementation project(":chulibrary")
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     implementation "androidx.core:core-ktx:$versions.core"
