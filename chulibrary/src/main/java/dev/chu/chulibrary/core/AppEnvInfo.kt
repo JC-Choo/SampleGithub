@@ -3,6 +3,7 @@ package dev.chu.chulibrary.core
 import android.content.Context
 import android.content.pm.InstallSourceInfo
 import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
 import android.graphics.Point
 import android.os.Build
 import android.util.Log
@@ -19,8 +20,11 @@ class AppEnvInfo(
     private val packageName: String
         get() = context.packageName
 
+    private val packageManager: PackageManager
+        get() = context.packageManager
+
     private val packageInfo: PackageInfo
-        get() = context.packageManager.getPackageInfo(packageName, 0)
+        get() = packageManager.getPackageInfo(packageName, 0)
 
     val version: String
         get() = try {
@@ -89,10 +93,10 @@ class AppEnvInfo(
      */
     val installInfo: String by lazy {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            val info : InstallSourceInfo = context.packageManager.getInstallSourceInfo(packageName)
+            val info : InstallSourceInfo = packageManager.getInstallSourceInfo(packageName)
             "versionName: ${info.initiatingPackageName}"
         } else {
-            val installer : String? = context.packageManager.getInstallerPackageName(packageName)
+            val installer : String? = packageManager.getInstallerPackageName(packageName)
             "versionName: $installer"
         }
     }

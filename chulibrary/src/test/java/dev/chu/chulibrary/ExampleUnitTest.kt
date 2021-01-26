@@ -17,6 +17,13 @@ import org.junit.Test
  */
 class ExampleUnitTest {
 
+    @Test
+    fun test() {
+        val testStr = "abcdefghijklmnopqrstuvwxyz"
+        println("test = ${testStr.takeLast(2)}, ${testStr.take(2)}")
+    }
+
+
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
 
