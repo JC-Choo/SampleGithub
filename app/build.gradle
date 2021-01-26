@@ -20,9 +20,31 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
+            debuggable true
             minifyEnabled false
+            versionNameSuffix "-debug"
+        }
+
+        debugFinal {
+            debuggable true
+            minifyEnabled true
+            versionNameSuffix "-debugFinal"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-rules-release.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.all { output->
+                    def date = new Date()
+                    def formattedDate = date.format('yyyyMMddHHmmss')
+                    outputFileName = outputFileName.replace("-release", "-${formattedDate}")
+                }
+            }
         }
     }
 
