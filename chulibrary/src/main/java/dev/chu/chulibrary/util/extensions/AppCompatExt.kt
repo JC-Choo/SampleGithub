@@ -1,4 +1,4 @@
-package dev.chu.chulibrary
+package dev.chu.chulibrary.util.extensions
 
 import android.widget.Toast
 import androidx.annotation.StringRes

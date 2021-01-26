@@ -19,9 +19,19 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
+            debuggable true
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debugFinal {
+            debuggable true
+            minifyEnabled true
+            consumerProguardFiles "proguard-rules.pro"
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', "proguard-rules-release.pro"
         }
     }
 
@@ -50,6 +60,7 @@ dependencies {
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.test_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.test_espresso"
+    testImplementation "androidx.arch.core:core-testing:$versions.arch_core"
 
     implementation "com.google.android.material:material:$versions.material"
     implementation "com.google.code.gson:gson:$versions.gson"
