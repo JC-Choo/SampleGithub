@@ -2,6 +2,10 @@ package dev.chu.chulibrary
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import dev.chu.chulibrary.arch.*
+import dev.chu.chulibrary.test.TestDoubleBackend
+import dev.chu.chulibrary.test.TestDoubleStringRepository
+import dev.chu.chulibrary.test.TestViewModel01
+import dev.chu.chulibrary.test.TestViewModel02
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test

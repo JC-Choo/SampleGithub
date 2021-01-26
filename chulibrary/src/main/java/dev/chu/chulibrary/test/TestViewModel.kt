@@ -1,8 +1,9 @@
-package dev.chu.chulibrary.arch
+package dev.chu.chulibrary.test
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dev.chu.chulibrary.R
+import dev.chu.chulibrary.arch.TextResource
 
 class TestViewModel02(
     private val backend: TestBackend

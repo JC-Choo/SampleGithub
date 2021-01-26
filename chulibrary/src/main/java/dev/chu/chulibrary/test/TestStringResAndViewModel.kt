@@ -1,4 +1,4 @@
-package dev.chu.chulibrary.arch
+package dev.chu.chulibrary.test
 
 import android.content.res.Resources
 import androidx.annotation.StringRes

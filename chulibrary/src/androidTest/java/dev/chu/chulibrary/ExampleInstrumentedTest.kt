@@ -2,8 +2,8 @@ package dev.chu.chulibrary
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import dev.chu.chulibrary.arch.TestDoubleBackend
-import dev.chu.chulibrary.arch.TestViewModel02
+import dev.chu.chulibrary.test.TestDoubleBackend
+import dev.chu.chulibrary.test.TestViewModel02
 import dev.chu.chulibrary.arch.TextResource
 import dev.chu.chulibrary.util.extensions.asString
 import org.junit.Assert.assertEquals
