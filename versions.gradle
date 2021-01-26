@@ -14,6 +14,7 @@ versions.appVersionName = "1.0.0"
 versions.libraryVersionCode = 1
 versions.libraryVersionName = "1.0.0"
 
+versions.arch_core = "2.1.0"
 versions.core = "1.3.2"
 versions.appcompat = "1.2.0"
 versions.constraintlayout = "2.0.4"
