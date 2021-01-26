@@ -1,31 +1,23 @@
 package dev.chu.chulibrary.arch
 
+import android.content.res.Resources
 import androidx.annotation.StringRes
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import dev.chu.chulibrary.R
+
+interface StringRepository {
+    fun getString(@StringRes resId: Int): String
+}
+
+class AndroidStringRepository(
+    private val resources: Resources
+) : StringRepository {
+    override fun getString(@StringRes resId: Int): String = resources.getString(resId)
+}
 
 class TestDoubleStringRepository: StringRepository {
     override fun getString(@StringRes resId: Int): String = "some string!"
 }
 
 class TestDoubleBackend: TestBackend()
-
-class TestViewModel(
-    private val backend: TestBackend,
-    private val stringRepo: StringRepository
-): ViewModel() {
-    val textToDisplay: MutableLiveData<String> = MutableLiveData()
-
-    fun loadText() {
-        try {
-            val text: String = backend.getText()
-            textToDisplay.value = text
-        } catch (e: Throwable) {
-            textToDisplay.value = stringRepo.getString(R.string.app_name)
-        }
-    }
-}
 
 open class TestBackend {
 

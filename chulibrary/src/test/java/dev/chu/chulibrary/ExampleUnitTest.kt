@@ -1,9 +1,7 @@
 package dev.chu.chulibrary
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import dev.chu.chulibrary.arch.TestDoubleBackend
-import dev.chu.chulibrary.arch.TestDoubleStringRepository
-import dev.chu.chulibrary.arch.TestViewModel
+import dev.chu.chulibrary.arch.*
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
@@ -19,12 +17,25 @@ class ExampleUnitTest {
     var instantExecutorRule = InstantTaskExecutorRule()
 
     @Test
-    fun when_backend_fails_fallback_string_is_displayed() {
+    fun when_backend_fails_fallback_string_is_displayed_02() {
+        val backend = TestDoubleBackend()
+        backend.failWhenLoadingText = true
+
+        val viewModel = TestViewModel02(backend)
+        viewModel.loadText()
+
+        val expectedText = TextResource.fromStringResId(R.string.app_name)
+        Assert.assertEquals(expectedText, viewModel.textToDisplay.value)
+        // data classes generate equals methods for us so we can compare them easily
+    }
+
+    @Test
+    fun when_backend_fails_fallback_string_is_displayed_01() {
         val stringRepo = TestDoubleStringRepository()
         val backend = TestDoubleBackend()
         backend.failWhenLoadingText = false  // makes backend.getText() throw an exception
 
-        val viewModel = TestViewModel(backend, stringRepo)
+        val viewModel = TestViewModel01(backend, stringRepo)
         viewModel.loadText()
 
         Assert.assertEquals("some string", viewModel.textToDisplay.value)
