@@ -1,4 +1,4 @@
-package dev.chu.chulibrary.arch
+package dev.chu.chulibrary.arch.ui
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes

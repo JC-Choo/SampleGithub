@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="headerViewModel"
+            type="dev.chu.chulibrary.arch.viewmodel.BaseDefaultHeaderViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,6 +20,7 @@
             android:id="@+id/profile"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:onClick="@{() -> headerViewModel.onClickImage()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +29,8 @@
         <TextView
             android:id="@+id/title"
             style="@style/header_title"
-            android:text="@{}"
+            android:text="@{headerViewModel.title}"
+            android:onClick="@{() -> headerViewModel.onClickTitle()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
