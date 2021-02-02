@@ -1,6 +1,7 @@
 package dev.chu.githubsample.main
 
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import dev.chu.chulibrary.arch.event.EventObserver
 import dev.chu.chulibrary.arch.list.BaseAdapter
 import dev.chu.chulibrary.arch.ui.BaseFragment
@@ -38,5 +39,21 @@ class MainFragment: BaseFragment<FragmentMainBinding, MainViewModel>(
         headerViewModel.clickEvent.observe(viewLifecycleOwner, EventObserver(this) { txt, _ ->
             toast(txt)
         })
+
+        viewModel.navigateToLargeImage.observe(viewLifecycleOwner, EventObserver(this) { _, _ ->
+            openLargeImage()
+        })
+
+        viewModel.navigateToGithubPractice.observe(viewLifecycleOwner, EventObserver(this) { _, _ ->
+            openGithub()
+        })
+    }
+
+    private fun openLargeImage() {
+
+    }
+
+    private fun openGithub() {
+
     }
 }

@@ -26,7 +26,7 @@
 
             <include
                 android:id="@+id/appHeader"
-                layout="@layout/include_default_header"
+                layout="@layout/include_header_default"
                 app:headerViewModel="@{headerViewModel}" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -35,36 +35,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-<!--            <Button-->
-<!--                android:id="@+id/pureFragment2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="24dp"-->
-<!--                android:layout_marginEnd="24dp"-->
-<!--                android:layout_marginBottom="24dp"-->
-<!--                android:onClick="@{() -> viewModel.onAuthFragmentClicked()}"-->
-<!--                android:text="@string/facade_test"-->
-<!--                android:textColor="@color/black"-->
-<!--                app:layout_constraintBottom_toTopOf="@+id/pureFragment"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.0"-->
-<!--                app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/pureFragment"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="24dp"-->
-<!--                android:layout_marginEnd="24dp"-->
-<!--                android:layout_marginBottom="24dp"-->
-<!--                android:onClick="@{() -> viewModel.onPureFragmentClicked()}"-->
-<!--                android:text="@string/pure_fragment"-->
-<!--                android:textColor="@color/black"-->
-<!--                app:layout_constraintBottom_toTopOf="@+id/largeImageFragment"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.0"-->
-<!--                app:layout_constraintStart_toStartOf="parent" />-->
 
             <Button
                 android:id="@+id/largeImageFragment"
@@ -95,21 +65,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/largeImageFragment" />
-
-<!--            <Button-->
-<!--                android:id="@+id/loginFragment"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="24dp"-->
-<!--                android:layout_marginTop="24dp"-->
-<!--                android:layout_marginEnd="24dp"-->
-<!--                android:onClick="@{() -> viewModel.onLoginFragmentClicked()}"-->
-<!--                android:text="@string/login_fragment"-->
-<!--                android:textColor="@color/black"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.0"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/githubFragment" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

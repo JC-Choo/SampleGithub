@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="headerViewModel"
+            type="dev.chu.githubsample.common.BaseSearchHeaderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:foreground="?selectableItemBackground"
+            android:onClick="@{() -> headerViewModel.onBackClicked()}"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:iconifiedByDefault="false"
+            android:imeOptions="flagNoFullscreen"
+            android:queryBackground="@color/transparent"
+            android:queryHint="Search the github user"
+            android:searchHintIcon="@null"
+            android:searchIcon="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop_mr1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
