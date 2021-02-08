@@ -6,6 +6,11 @@ import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
+/**
+ * Custom CallAdapter 를 만들기 위한 세번째 단계
+ * CallAdapter.Factory()는 [get] 을 구현한 추상 메소드 오직 하나만 가진다.
+ * [get] : 처리할 수 있는 인터페이스 메소드에 대한 콜백 어댑터 또는 팩토리에서 처리할 수 없는 경우 Null 을 반환한다.
+ */
 class BaseApiResponseAdapterFactory : CallAdapter.Factory() {
     override fun get(
         returnType: Type,

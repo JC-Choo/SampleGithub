@@ -5,9 +5,17 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.graphics.drawable.Drawable
 import android.os.Build
+import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+
+fun Context.toast(message: String, duration: Int = 0) =
+    Toast.makeText(this, message, duration).show()
+
+fun Context.toast(@StringRes resId: Int, duration: Int = 0) =
+    Toast.makeText(this, resId, duration).show()
 
 /**
  * Context 로부터 AppCompatActivity 를 찾기 위한 fun
