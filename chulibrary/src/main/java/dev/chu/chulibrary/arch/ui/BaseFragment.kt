@@ -22,10 +22,8 @@ import dev.chu.chulibrary.arch.list.BaseAdapter
 import dev.chu.chulibrary.concurrent.BaseCoroutineScope
 import dev.chu.chulibrary.concurrent.UICoroutineScope
 import dev.chu.chulibrary.di.ViewModelInject
-import kotlinx.coroutines.CoroutineScope
 import java.util.*
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 @Suppress("MemberVisibilityCanBePrivate")
 abstract class BaseFragment<VDB: ViewDataBinding, VM: ViewModel> @JvmOverloads constructor(

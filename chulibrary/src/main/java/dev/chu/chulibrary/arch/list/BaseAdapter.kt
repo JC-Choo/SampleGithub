@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListUpdateCallback
 import androidx.recyclerview.widget.RecyclerView
 
 open class BaseAdapter(
-
+    viewHolderFactory: ViewHolderFactory
 ) : RecyclerView.Adapter<BaseViewHolder<ListItem<*>>>(), ListUpdateCallback {
 
     /**

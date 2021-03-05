@@ -39,23 +39,27 @@
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:orientation="vertical"
-            android:paddingTop="@dimen/spacing_normal"
-            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/margin_normal"
+            android:paddingBottom="@dimen/margin_normal"
             android:scrollbars="vertical"
             app:layoutManager="LinearLayoutManager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:listitem="@layout/user_search_item" />
+            tools:listitem="@layout/item_user_search" />
 
+
+<!--        app:setVisible="@{viewModel.isEmpty}"-->
         <TextView
             android:id="@+id/empty"
-            style="@style/Widget.Ark.Github.EmptyResults"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginHorizontal="@dimen/margin_large"
             android:layout_marginBottom="52dp"
+            android:drawableTop="@drawable/ic_sad"
+            android:drawablePadding="@dimen/margin_normal"
+            android:gravity="center_horizontal"
             android:text="No results found"
-            app:goneUnless="@{viewModel.isEmpty}"
+            android:textAppearance="?android:textAppearanceMedium"
             tools:targetApi="o"
             tools:visibility="visible" />
 

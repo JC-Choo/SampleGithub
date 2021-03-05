@@ -11,6 +11,16 @@
         android:label="Main"
         tools:layout="@layout/fragment_main">
 
+        <action
+            android:id="@+id/action_main_to_search"
+            app:destination="@id/search" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/search"
+        android:name="dev.chu.githubsample.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search">
     </fragment>
 
 </navigation>
