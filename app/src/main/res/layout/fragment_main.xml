@@ -23,12 +23,9 @@
             android:layout_height="wrap_content">
 
             <include
-                android:id="@+id/headerMain"
-                layout="@layout/include_header_main"
-                app:headerViewModel="@{headerViewModel}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/appHeader"
+                layout="@layout/include_header_default"
+                app:headerViewModel="@{headerViewModel}" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

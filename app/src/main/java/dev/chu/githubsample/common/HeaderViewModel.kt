@@ -17,15 +17,33 @@ class HeaderViewModel @Inject constructor() : ViewModel() {
         _headerTitle.changeValue(title)
     }
 
-    private val _headerLeftImage = SingleLiveEvent<Drawable?>()
-    val headerLeftImage: LiveData<Drawable?> get() = _headerLeftImage
-    fun setLeftImage(res: Drawable?) {
-        _headerLeftImage.changeValue(res)
+    private val _isShowImageRight = MutableLiveData(false)
+    val isShowImageRight: LiveData<Boolean> get() = _isShowImageRight
+    fun showImageRight(isShow: Boolean) {
+        _isShowImageRight.changeValue(isShow)
     }
 
-    private val _clickHeaderLeftImage = SingleLiveEvent<Unit>()
-    val clickHeaderLeftImage: LiveData<Unit> get() = _clickHeaderLeftImage
-    fun onClickHeaderLeftImage() {
-        _clickHeaderLeftImage.changeValue(Unit)
+    private val _headerImageLeft = SingleLiveEvent<Drawable?>()
+    val headerImageLeft: LiveData<Drawable?> get() = _headerImageLeft
+    fun setImageLeft(res: Drawable?) {
+        _headerImageLeft.changeValue(res)
+    }
+
+    private val _clickHeaderImageLeft = SingleLiveEvent<Unit>()
+    val clickHeaderImageLeft: LiveData<Unit> get() = _clickHeaderImageLeft
+    fun onClickHeaderImageLeft() {
+        _clickHeaderImageLeft.changeValue(Unit)
+    }
+
+    private val _headerImageRight = SingleLiveEvent<Drawable?>()
+    val headerImageRight: LiveData<Drawable?> get() = _headerImageRight
+    fun setImageRight(res: Drawable?) {
+        _headerImageRight.changeValue(res)
+    }
+
+    private val _clickHeaderImageRight = SingleLiveEvent<Unit>()
+    val clickHeaderImageRight: LiveData<Unit> get() = _clickHeaderImageRight
+    fun onClickHeaderImageRight() {
+        _clickHeaderImageRight.changeValue(Unit)
     }
 }

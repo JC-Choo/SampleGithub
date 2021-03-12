@@ -18,8 +18,8 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.f
             initBinding {
                 it.viewModel = viewModel
                 it.headerViewModel = headerViewModel
-                headerViewModel.setTitle("MainFragment")
-                headerViewModel.setLeftImage(requireContext().getDrawableById(R.drawable.account_circle_black))
+                headerViewModel.setTitle(getString(R.string.main))
+                headerViewModel.setImageLeft(requireContext().getDrawableById(R.drawable.account_circle_black))
             }
         }
     }
@@ -27,7 +27,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.f
     override fun observeViewModel() {
         super.observeViewModel()
 
-        headerViewModel.clickHeaderLeftImage.observe(viewLifecycleOwner) {
+        headerViewModel.clickHeaderImageLeft.observe(viewLifecycleOwner) {
             toast("클릭")
         }
 
