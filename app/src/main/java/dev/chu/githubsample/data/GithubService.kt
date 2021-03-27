@@ -21,8 +21,12 @@ interface GithubService {
     ): BaseApiResponse<GithubResult<User>, ErrorModel>
 
     @GET("users/{user}/repos")
-    suspend fun repos(@Path("user") user: String): BaseApiResponse<List<Repository>, ErrorModel>
+    suspend fun repos(
+        @Path("user") user: String
+    ): BaseApiResponse<List<Repository>, ErrorModel>
 
     @GET("search/repositories")
-    suspend fun searchRepos(@Query("q") query: String): BaseApiResponse<GithubResult<Repository>, ErrorModel>
+    suspend fun searchRepos(
+        @Query("q") query: String
+    ): BaseApiResponse<GithubResult<Repository>, ErrorModel>
 }
