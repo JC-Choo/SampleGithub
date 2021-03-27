@@ -3,58 +3,21 @@ package dev.chu.githubsample.di
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import dev.chu.chulibrary.api.BaseApiResponseAdapterFactory
-import dev.chu.chulibrary.core.AppPref
-import dev.chu.chulibrary.di.ForApplication
-import dev.chu.chulibrary.di.ViewModelModule
+import dev.chu.chulibrary.di.ApplicationContext
 import dev.chu.githubsample.MainApplication
-import dev.chu.githubsample.data.ApiService
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
-import javax.inject.Singleton
 
-@Module(includes = [ViewModelModule::class])
+/**
+ * [Module]
+ * - 컴포넌트에 의존성을 제공하는 역할
+ * - 객체의 의존성을 주입하기 위해서 사용되는 개념 (Module 과 Provider Methods)
+ *
+ * [Provides]
+ * - 컴파일 타임에 의존성을 제공하는 바인드된 프로바이더를 생성하기 위핸 애노테이션
+ * - 같은 타입의 반환형을 가진 함수가 있으면 안된다. -> Named or Qualifier
+ */
+@Module
 class AppModule {
-    @ForApplication
+    @ApplicationContext
     @Provides
     fun provideContext(app: MainApplication): Context = app
-
-    @Singleton
-    @Provides
-    fun provideAppPref(app: MainApplication): AppPref = app.appPref
-
-
-    @Singleton
-    @Provides
-    fun provideGithubService(): ApiService {
-        return Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .addConverterFactory(ScalarsConverterFactory.create())
-            .addCallAdapterFactory(BaseApiResponseAdapterFactory())
-            .build()
-            .create(ApiService::class.java)
-    }
-
-//    @Singleton
-//    @Provides
-//    fun provideDb(app: Application): GithubDb {
-//        return Room
-//            .databaseBuilder(app, GithubDb::class.java, "github.db")
-//            .fallbackToDestructiveMigration()
-//            .build()
-//    }
-//
-//    @Singleton
-//    @Provides
-//    fun provideUserDao(db: GithubDb): UserDao {
-//        return db.userDao()
-//    }
-//
-//    @Singleton
-//    @Provides
-//    fun provideRepoDao(db: GithubDb): RepoDao {
-//        return db.repoDao()
-//    }
 }

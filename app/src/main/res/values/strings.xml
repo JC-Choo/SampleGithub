@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">GithubSample</string>
 
-    <string name="github">Github</string>
-    <string name="search_user_name">search user name</string>
-    <string name="pure_fragment">PURE FRAGMENT</string>
-    <string name="large_image_fragment">LARGE IMAGE LOADING</string>
-    <string name="facade_test">FACADE TEST</string>
-    <string name="login_fragment">Login Web Fragment</string>
+    <string name="main">Main</string>
+    <string name="popular">Popular</string>
 </resources>

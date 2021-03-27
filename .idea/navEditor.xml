@@ -13,13 +13,13 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-37" />
-                            <option name="y" value="19" />
+                            <option name="x" value="-129" />
+                            <option name="y" value="13" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_main_to_search">
+                            <entry key="action_main_to_popular">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -29,13 +29,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="search">
+                  <entry key="popular">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="231" />
-                            <option name="y" value="20" />
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>

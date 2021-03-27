@@ -1,9 +1,5 @@
 package dev.chu.chulibrary.api
 
-import android.os.Handler
-import android.os.Looper
-import dev.chu.chulibrary.core.BaseApplication
-import dev.chu.chulibrary.util.extensions.toast
 import java.io.IOException
 
 /**
@@ -13,23 +9,23 @@ import java.io.IOException
  * jakeWharton 이 만든 CoroutineAdapter 를 사용할 필요가 없다.
  * 따라서, Custom CoroutineAdapter 를 만들어 사용한다.
  *
- * @param T : 성공 Response
- * @param U : 실패 Response
+ * @param S : 성공 Response
+ * @param E : 실패 Response
  *
  * 참고 : https://proandroiddev.com/create-retrofit-calladapter-for-coroutines-to-handle-response-as-states-c102440de37a
  */
-sealed class BaseApiResponse<out T : Any, out U : Any> {
+sealed class BaseApiResponse<out S : Any, out E : Any> {
     /**
      * request 의 성공 상태의 body 를 포함하고 있는 data class
      * Success response with body
      */
-    data class Success<T : Any>(val body: T) : BaseApiResponse<T, Nothing>()
+    data class Success<S : Any>(val body: S) : BaseApiResponse<S, Nothing>()
 
     /**
      * 2xx 이 아닌 response 를 나타내며, error body 와 response 상태 코드를 포함한다.
      * Failure response with body
      */
-    data class ApiError<U : Any>(val body: U, val code: Int) : BaseApiResponse<Nothing, U>()
+    data class ApiError<E : Any>(val body: E, val code: Int) : BaseApiResponse<Nothing, E>()
 
     /**
      * 인터넷 연결이 안될 경우처럼 네트워크 실패에 대해 나타낸다.
@@ -42,22 +38,4 @@ sealed class BaseApiResponse<out T : Any, out U : Any> {
      * For example, json parsing error
      */
     data class UnknownError(val error: Throwable?) : BaseApiResponse<Nothing, Nothing>()
-}
-
-fun <T : Any, U : Any> BaseApiResponse<T, U>.handled(): T? {
-    when(this) {
-        is BaseApiResponse.Success -> return this.body
-        is BaseApiResponse.ApiError -> {
-            Handler(Looper.getMainLooper()).post {
-                BaseApplication.getInstance().toast("ApiError $body")
-            }
-        }
-        is BaseApiResponse.NetworkError -> {
-            error.message
-        }
-        is BaseApiResponse.UnknownError -> {
-            error?.message
-        }
-    }
-    return null
 }

@@ -9,18 +9,16 @@
         android:id="@+id/main"
         android:name="dev.chu.githubsample.main.MainFragment"
         android:label="Main"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_main" >
 
         <action
-            android:id="@+id/action_main_to_search"
-            app:destination="@id/search" />
+            android:id="@+id/action_main_to_popular"
+            app:destination="@id/popular" />
     </fragment>
 
     <fragment
-        android:id="@+id/search"
-        android:name="dev.chu.githubsample.search.SearchFragment"
-        android:label="Search"
-        tools:layout="@layout/fragment_search">
-    </fragment>
-
+        android:id="@+id/popular"
+        android:name="dev.chu.githubsample.popular.PopularFragment"
+        android:label="Popular"
+        tools:layout="@layout/fragment_popular" />
 </navigation>
