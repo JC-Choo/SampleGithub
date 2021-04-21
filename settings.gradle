@@ -1,3 +1,2 @@
-include ':chulibrary'
 include ':app'
 rootProject.name = "GithubSample"
