@@ -1,7 +1,8 @@
-package dev.chu.githubsample
+package dev.chu.githubsample.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import dev.chu.githubsample.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

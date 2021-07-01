@@ -69,6 +69,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swiperefreshlayout"
+    implementation "androidx.security:security-crypto:$versions.securityCrypto"
 
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.test_junit"
