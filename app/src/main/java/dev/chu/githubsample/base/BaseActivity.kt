@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.android.support.DaggerAppCompatActivity
 import dev.chu.githubsample.R
 import dev.chu.githubsample.concurrency.AppDispatchers
+import dev.chu.githubsample.di.ViewModelInject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
@@ -110,8 +111,8 @@ abstract class BaseActivity<VDB: ViewDataBinding, VM: ViewModel>(
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    @field:ViewModelInject
-    @field:Inject
+    @ViewModelInject
+    @Inject
     lateinit var viewModel: VM
         protected set
 
